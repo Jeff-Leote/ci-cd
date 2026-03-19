@@ -20,12 +20,6 @@ install:
   stage: .pre
   script:
     - npm ci --cache .npm --prefer-offline
-	
-install:
-  stage: .pre
-  script:
-    # define cache dir & use it npm!
-    - npm ci --cache .npm --prefer-offline
 lint:
   stage: validate
   script:
