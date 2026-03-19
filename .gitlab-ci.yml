@@ -28,7 +28,6 @@ unit-test:
   stage: test
   script:
     - npm test
-	
 release:
   stage: release
   when: manual
@@ -44,13 +43,4 @@ release:
     - git checkout $CI_COMMIT_BRANCH
     - git pull origin $CI_COMMIT_BRANCH --rebase
   script:
-    - npx --yes release-it --ci	
-// Permet de spécifier que ce Job sera activé manuellement.
-when: manual
-// Permet d'ajouter des rules au Job pour l'afficher ou non grâce au if.
-// Ici le commit doit être sur la branche main, cela ne doit pas être un tag
-// et le title du commit doit être différent de ce format.
-rules:
-	- if: '$CI_COMMIT_BRANCH == "main"
-        && $CI_COMMIT_TAG == null
-        && $CI_COMMIT_TITLE !~ /^chore: release/'
+    - npx --yes release-it --ci
