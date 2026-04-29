@@ -39,9 +39,7 @@ lint:
 only-canary:
   stage: validate
   rules:
-    - if: '$ENV_TARGET == "canary"'
-      when: on_success
-    - when: never
+  - if: '$ENV_TARGET == "canary"'
   script:
     - echo "Hello Only Canary !"
 unit-test:
