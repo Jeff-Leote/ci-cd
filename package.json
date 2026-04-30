@@ -4,6 +4,7 @@
   "version": "0.0.2",
   "main": "src/index.js",
   "scripts": {
+    "build": "vite build",
     "start": "node src/index.js",
     "lint": "eslint src --max-warnings=0",
     "prepare": "husky",
